@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Categorie;
+use App\Entity\Serie;
 use App\Form\CategorieType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -37,10 +38,14 @@ class HomeController extends AbstractController
 
         }
 
+        $seriesRepository = $this->getDoctrine()->getRepository(Serie::class)->findAll();
+
+
 
         return $this->render('home/index.html.twig', [
             'categorieForm' => $formCategorie->createView(),
-            'categories' => $allCategories
+            'categories' => $allCategories,
+            'series' => $seriesRepository
         ]);
 
    

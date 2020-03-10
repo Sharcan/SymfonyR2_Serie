@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Serie;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +21,7 @@ class SerieType extends AbstractType
             ])
             ->add('startedAt')
             ->add('EndedAt')
-            ->add('image')
+            ->add('image', FileType::class)
             ->add('number_season')
             // ->add('categorie_id')
             ->add('submit', SubmitType::class, [
