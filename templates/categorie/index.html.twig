@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>Catégorie</h1>
+                Vous regardez la catégorie : {{categorie.name}}
+            </div>
+            <div class="col-6">
+                {{form(updateFormCategorie)}}
+                <button class="btn btn-danger"><a href="{{path('removeCategorie', {id: categorie.id})}}" style="color: white;">Suppimer cette catégorie</a></button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
