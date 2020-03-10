@@ -21,6 +21,7 @@ class HomeController extends AbstractController
 
         $categorieRepository = $this->getDoctrine()->getRepository(Categorie::class);
         $allCategories = $categorieRepository->findAll();
+        dump($allCategories);
 
         $formCategorie = $this->createForm(CategorieType::class, $categorie);
         $formCategorie->handleRequest($request);

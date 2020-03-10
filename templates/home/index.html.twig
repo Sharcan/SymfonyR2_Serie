@@ -16,6 +16,7 @@
             <div class="col-12">
                 <h1>Séries</h1>
                 <p>Nous avons actuellement ... série dans notre base de données</p>
+                <a href="{{path('serie')}}">Voir toutes les séries</a>
             </div>
         </div>
     </div>
@@ -30,7 +31,7 @@
                 <p>voici toutes les catégories disponibles :
                     <ul>
                         {% for categorie in categories %}
-                            <li> <a href="{{path('categorie', {id: categorie.id})}}">{{categorie.name}}</a></li>
+                            <li> <a href="{{path('categorie', {id: categorie.id})}}">{{categorie.name}}</a>, avec {{categorie.series.count()}} séries dans celle ci</li>
                         {% endfor %}
                     </ul>
                 </p>
